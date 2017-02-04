@@ -311,6 +311,16 @@
 </button>
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
     
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/02/03/hello-world/" class="leancloud-views_num" data-flag-title="Hello World">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
 
     
         
@@ -387,6 +397,30 @@
                 <!-- Post Comments -->
                 
                     
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://douhuajun.github.io/2017/02/03/hello-world/"
+        data-title="Hello World">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
 
 
 
@@ -513,11 +547,11 @@
     <!-- Pages  -->
   	
         <li>
-            <a href="/links" title="小伙伴">
+            <a href="/tags" title="标签">
                 
-                    <i class="material-icons sidebar-material-icons">mood</i>
+                    <i class="material-icons sidebar-material-icons">tag</i>
                 
-                小伙伴
+                标签
             </a>
         </li>
   	
@@ -531,9 +565,18 @@
         </li>
   	
         <li>
+            <a href="/links" title="小伙伴">
+                
+                    <i class="material-icons sidebar-material-icons">mood</i>
+                
+                小伙伴
+            </a>
+        </li>
+  	
+        <li>
             <a href="/about" title="关于">
                 
-                    <i class="material-icons sidebar-material-icons">account box</i>
+                    <i class="material-icons sidebar-material-icons">account</i>
                 
                 关于
             </a>
@@ -742,12 +785,114 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize("z1iCOtJOS9tHIBa6NdeWpEV9-gzGzoHsz", "z0TMnM4clwPbsUpeakbOFPNg");
+    </script>
+    <script>
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
 
 
     <!-- Busuanzi -->
     <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: '豆花君'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 

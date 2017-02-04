@@ -20,37 +20,4 @@
     
   
   
-    
-    <entry>
-      <title></title>
-      <url>http://douhuajun.github.io/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[about]]></title>
-      <url>http://douhuajun.github.io/about/index-1.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://douhuajun.github.io/about/index.html</url>
-      <content type="html"><![CDATA[<p>个人简介<br>  豆花君…</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://douhuajun.github.io/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[小伙伴]]></title>
-      <url>http://douhuajun.github.io/links/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-  
 </search>
