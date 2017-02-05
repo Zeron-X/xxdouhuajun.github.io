@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://douhuajun.github.io/2017/02/03/hello-world/</loc>
+    
+    <lastmod>2017-02-04T17:20:39.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://douhuajun.github.io/tags/index.html</loc>
+    
+    <lastmod>2017-02-04T10:44:56.429Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://douhuajun.github.io/lab/index.html</loc>
+    
+    <lastmod>2017-02-04T09:25:51.791Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://douhuajun.github.io/categories/index.html</loc>
     
     <lastmod>2017-02-04T08:13:00.401Z</lastmod>
@@ -16,23 +37,9 @@
   </url>
   
   <url>
-    <loc>http://douhuajun.github.io/tags/index.html</loc>
-    
-    <lastmod>2017-02-04T08:09:48.461Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://douhuajun.github.io/links/index.html</loc>
     
     <lastmod>2017-02-04T07:00:50.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://douhuajun.github.io/2017/02/03/hello-world/</loc>
-    
-    <lastmod>2017-02-03T13:04:52.189Z</lastmod>
     
   </url>
   
