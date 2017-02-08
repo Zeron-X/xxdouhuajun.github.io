@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="/css/material.min.css">
     <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/typed.css">
+    <link rel="stylesheet" href="/css/player.css">
     <!-- Config CSS -->
 
 
@@ -156,6 +157,7 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/typed.min.js"></script>
+
     
 
     <link rel="stylesheet" href="/css/highlight/agate.css">
@@ -205,10 +207,12 @@
     <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
 
         <p class="index-top-block-slogan">
-            <div class="wrap">
+           <div class="wrap">
                 <div class="type-wrap">
                     <div id="typed-strings">
-                        <span>Hi, nice to meet you!</span>
+                        <p>Hi, nice to meet you ~
+
+<span>Just enjoy yourself !</span></p>
                     </div>
                     <span id="typed" style="white-space:pre;"></span>
                 </div>
@@ -227,7 +231,6 @@
         </div>
     </div>
 </div>
-
         <!-- Blog info -->
 <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
 
@@ -280,6 +283,12 @@
                     </li>
                 </a>
             
+                <a class="index_share-link" href="/books" title="书库">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        书库
+                    </li>
+                </a>
+            
                 <a class="index_share-link" href="/lab" title="实验室">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         实验室
@@ -311,6 +320,14 @@
             
 
             
+                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=豆花君&title=豆花君&summary=豆花君&pics=http://douhuajun.github.io/img/favicon.png&url=http://douhuajun.github.io/" target="_blank">
+                    <li class="mdl-menu__item">
+                        分享到 QQ
+                    </li>
+                </a>
+            
+            
+            
                 <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=豆花君&url=http://douhuajun.github.io/&pic=&searchPic=false&style=simple" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         分享到微博
@@ -333,6 +350,141 @@
     </div>
 </div>
 
+	<div id="QPlayer">
+		<div id="pContent">
+			<div id="player">
+				<span class="cover"></span>
+				<div class="ctrl">
+					<div class="musicTag marquee">
+						<strong>Title</strong>
+					</div>
+					<div class="progress">
+						<div class="timer left">0:00</div>
+						<div class="contr">
+							<div class="rewind icon"></div>
+							<div class="playback icon"></div>
+							<div class="fastforward icon"></div>
+						</div>
+						<div class="right">
+							<div class="liebiao icon"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ssBtn">
+				<div class="adf"></div>
+			</div>
+		</div>
+		<ol id="playlist"></ol>
+	</div>
+	<script src="i/jquery.min.js"></script>
+	<script src="/js/player.js"></script>
+	<script>
+		var playlist = [{
+			title: "River Flows In You.mp3",
+			artist: "郑成河",
+			mp3: "/music/郑成河 - River Flows In You.mp3",
+			cover: "/img/musicCover/Irony.jpg",
+		},{
+			title: "童话镇",
+			artist: "陈一发儿",
+			mp3: "/music/陈一发儿 - 童话镇.mp3",
+			cover: "/img/musicCover/Cyf.jpg",
+		}, {
+			title: "Oceanside",
+			artist: "Lainey Lou",
+			mp3: "/music/Lainey Lou - Oceanside.mp3",
+			cover: "/img/musicCover/Melody Lane.jpg",
+		}, {
+			title: "岁月神偷",
+			artist: "金玟岐",
+			mp3: "/music/金玟岐 - 岁月神偷.mp3",
+			cover: "/img/musicCover/Jwq.jpg",
+		}, {
+			title: "小幸运(Cover 田馥甄)",
+			artist: "金玟岐",
+			mp3: "/music/金玟岐 - 小幸运(Cover 田馥甄).mp3",
+			cover: "/img/musicCover/Jwq.jpg",
+		},{
+			title: "僕らの手には何もないけど、",
+			artist: "Ram Wire",
+			mp3: "/music/Ram Wire - 僕らの手には何もないけど、.mp3",
+			cover: "/img/musicCover/僕らの手には何もないけど、.jpg",
+		},{
+			title: "Matter of Time",
+			artist: "Shannon Hurley",
+			mp3: "/music/Shannon Hurley - Matter of Time.mp3",
+			cover: "/img/musicCover/Matter Of Time.jpg",
+		},{
+			title: "晴天",
+			artist: "刘瑞琦",
+			mp3: "/music/刘瑞琦 - 晴天.mp3",
+			cover: "/img/musicCover/Lrq.jpg",
+		},{
+			title: "房间",
+			artist: "刘瑞琦",
+			mp3: "/music/刘瑞琦 - 房间.mp3",
+			cover: "/img/musicCover/Lrq.jpg",
+		}, {
+			title: "Undertale",
+			artist: "Toby Fox",
+			mp3: "/music/Toby Fox - Undertale.mp3",
+			cover: "/img/musicCover/Undertale.jpg",
+		}, {
+			title: "被驯服的象",
+			artist: "蔡健雅",
+			mp3: "/music/蔡健雅 - 被驯服的象.mp3",
+			cover: "/img/musicCover/Cjy.jpg",
+		},{
+			title: "쓰레기(Inst.)",
+			artist: "河佑镇",
+			mp3: "/music/河佑镇 - 쓰레기(Inst.).mp3",
+			cover: "/img/musicCover/쓰레기.jpg",
+		}, {
+			title: "Give it away",
+			artist: "Motif",
+			mp3: "/music/Motif - Give It Away.mp3",
+			cover: "/img/musicCover/Give It Away.jpg",
+		}, {
+			title: "心做し",
+			artist: "Sou",
+			mp3: "/music/Sou - 心做し.mp3",
+			cover: "/img/musicCover/Pop.jpg",
+		}, {
+			title: "Opening Titles",
+			artist: "David Arnold",
+			mp3: "/music/David Arnold - Opening Titles.mp3",
+			cover: "/img/musicCover/Sherlock.jpg",
+		},{
+			title: "当你",
+			artist: "回音哥",
+			mp3: "/music/回音哥 - 当你.mp3",
+			cover: "/img/musicCover/Hyg.jpg",
+		}, {
+			title: "Best of my Love",
+			artist: "安田レイ",
+			mp3: "/music/安田レイ - Best of my Love.mp3",
+			cover: "/img/musicCover/Will.jpg",
+		},{
+			title: "Wish You Well",
+			artist: "Katie Herzig",
+			mp3: "/music/Katie Herzig - Wish You Well.mp3",
+			cover: "/img/musicCover/Wish You Will.jpg",
+		},];
+		var isRotate = true;
+		var autoplay = true;
+	</script>
+	
+	<script>
+		function bgChange()
+		{
+			var lis = $('.lib');
+			for(var i = 0; i < lis.length; i += 2)
+				lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+		}
+		window.onload = bgChange;
+	</script>
+
     
     <div class="locate-thumbnail-symbol"></div>
 
@@ -343,11 +495,11 @@
     <!-- Post Thumbnail -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/arcPic/bg.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/arcPic/Hello_World.png)">
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/03/hello-world/">Hello World</a></p>
+        <p class="article-headline-p"><a href="/2017/02/07/hello-world/">Hello World！</a></p>
     </div>
 
     <!-- Post Excerpt -->
@@ -357,7 +509,7 @@
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2017/02/03/hello-world/" target="_self">继续阅读</a>
+            <a href="/2017/02/07/hello-world/" target="_self">继续阅读</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -369,21 +521,15 @@
             </div>
             <div>
                 <strong>豆花君</strong>
-                <span>2月 03, 2017</span>
+                <span>2月 07, 2017</span>
             </div>
         </div>
         <div id="post_entry-right-info">
             <!-- Category -->
             <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Java/">Java</a>
+                <a class="post_category-link" href="/categories/Hexo/">Hexo</a>
             </span>
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
             
 
             <!-- Post Views -->
@@ -509,7 +655,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
     
@@ -523,6 +669,15 @@
                     <i class="material-icons sidebar-material-icons">loyalty</i>
                 
                 标签
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/books" title="书库">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                书库
             </a>
         </li>
   	
@@ -719,6 +874,19 @@
     
 </footer>
 
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "/js/player.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>
+
                     <!-- Import File -->
 <script src="/js/highlight.min.js"></script>
 <script src="/js/js.min.js"></script>
@@ -840,27 +1008,7 @@
 
 
 
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-
-    <!-- 多说公共 js 代码 start -->
-    <script type="text/javascript">
-        var duoshuoQuery = {
-            short_name: 'null'
-        };
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';
-            ds.async = true;
-            ds.src = 'https://static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
-    <!-- 多说公共 js 代码 end -->
 
 
 

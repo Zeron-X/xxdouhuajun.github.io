@@ -59,6 +59,7 @@
     <link rel="stylesheet" href="/css/material.min.css">
     <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/typed.css">
+    <link rel="stylesheet" href="/css/player.css">
     <!-- Config CSS -->
 
 
@@ -158,6 +159,7 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/typed.min.js"></script>
+
     
 
     <link rel="stylesheet" href="/css/highlight/agate.css">
@@ -201,112 +203,381 @@
 
 <!-- Layouts -->
 
-    <!-- Single Links Page -->
-    <style>
-    .md-links {
-        min-height: calc(100% - 120px - 5pc - 6em);
-        text-align: center;
-        overflow: auto;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 320px;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (min-width: 640px) {
-        .md-links {
-            max-width: 640px;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    @media screen and (min-width: 960px) {
-        .md-links {
-            max-width: 960px;
-        }
-    }
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/arcPic/friends.jpg)">
+    
+            <p class="article-headline-p">
+                小伙伴
+            </p>
+        </div>
 
-    @media screen and (min-width: 1280px) {
-        .md-links {
-            max-width: 1280px;
-        }
-    }
 
-    @media screen and (min-width: 1600px) {
-        .md-links {
-            max-width: 1600px;
-        }
-    }
 
-    @media screen and (max-width: 480px) {
-        .md-links {
-            min-height: calc(100% - 200px - 5pc - 6em);
-            margin-top: 6em;
-        }
-    }
 
-    .md-links-item {
-        background: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-        height: 72px;
-        line-height: 15px;
-        margin: 20px 10px;
-        padding: 0px 0px;
-        transition: box-shadow 0.25s;
-    }
 
-    .md-links a {
-        color: #333;
-        text-decoration: none;
-    }
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
 
-    .md-links li {
-        width: 300px;
-        float: left;
-        list-style: none;
-    }
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>豆花君</strong>
+        <span>2月 07, 2017</span>
+    </div>
 
-    .md-links-item img {
-        float: left;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 11px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    }
+    <div class="section-spacer"></div>
 
-    .md-links-item:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
 
-    .md-links-item a:hover{
-        cursor: pointer;
-    }
+    <!-- Qrcode -->
+    
 
-    .md-links-title {
-        font-size: 20px;
-        line-height: 50px;
-    }
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
 
-    #scheme-Paradox .mdl-mini-footer{
-        clear: left;
-    }
-    #bottom{
-        position: relative;
-    }
-</style>
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
 
-<ul class="md-links">
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/links/index.html" class="leancloud-views_num" data-flag-title="小伙伴">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=豆花君&title=小伙伴&summary=豆花君&pics=http://douhuajun.github.io/img/favicon.png&url=http://douhuajun.github.io/links/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=小伙伴&url=http://douhuajun.github.io//links/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share Telegram -->
     
 </ul>
 
-<script>
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
-</script>
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>
+    
+
+    
+</div>
 
 
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
+
+<div id="QPlayer">
+        <div id="pContent">
+            <div id="player">
+                <span class="cover"></span>
+                <div class="ctrl">
+                    <div class="musicTag marquee">
+                        <strong>Title</strong>
+                    </div>
+                    <div class="progress">
+                        <div class="timer left">0:00</div>
+                        <div class="contr">
+                            <div class="rewind icon"></div>
+                            <div class="playback icon"></div>
+                            <div class="fastforward icon"></div>
+                        </div>
+                        <div class="right">
+                            <div class="liebiao icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ssBtn">
+                <div class="adf"></div>
+            </div>
+        </div>
+        <ol id="playlist"></ol>
+    </div>
+    <script src="i/jquery.min.js"></script>
+    <script src="/js/player.js"></script>
+    <script>
+        var playlist = [{
+            title: "River Flows In You.mp3",
+            artist: "郑成河",
+            mp3: "/music/郑成河 - River Flows In You.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },{
+            title: "童话镇",
+            artist: "陈一发儿",
+            mp3: "/music/陈一发儿 - 童话镇.mp3",
+            cover: "/img/musicCover/01.jpg",
+        }, {
+            title: "Just a Little",
+            artist: "Dana Lowrey",
+            mp3: "/music/Dana Lowrey - Just a Little.mp3",
+            cover: "/img/musicCover/03.jpg",
+        }, {
+            title: "岁月神偷",
+            artist: "金玟岐",
+            mp3: "/music/金玟岐 - 岁月神偷.mp3",
+            cover: "/img/musicCover/05.jpg",
+        }, {
+            title: "小幸运(Cover 田馥甄)",
+            artist: "金玟岐",
+            mp3: "/music/金玟岐 - 小幸运(Cover 田馥甄).mp3",
+            cover: "/img/musicCover/05.jpg",
+        },{
+            title: "僕らの手には何もないけど",
+            artist: "Ram Wire",
+            mp3: "/music/Ram Wire - 僕らの手には何もないけど.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },{
+            title: "Matter of Time",
+            artist: "Shannon Hurley",
+            mp3: "/music/Shannon Hurley - Matter of Time.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },{
+            title: "晴天.mp3",
+            artist: "刘瑞琦",
+            mp3: "/music/刘瑞琦 - 晴天.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },{
+            title: "房间",
+            artist: "刘瑞琦",
+            mp3: "/music/刘瑞琦 - 房间.mp3",
+            cover: "/img/musicCover/03.jpg",
+        }, {
+            title: "Undertale",
+            artist: "Toby Fox",
+            mp3: "/music/Toby Fox - Undertale.mp3",
+            cover: "/img/musicCover/03.jpg",
+        }, {
+            title: "被驯服的象",
+            artist: "蔡健雅",
+            mp3: "/music/蔡健雅 - 被驯服的象.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },{
+            title: "쓰레기(Inst.)",
+            artist: "河佑镇",
+            mp3: "/music/河佑镇 - 쓰레기(Inst.).mp3",
+            cover: "/img/musicCover/03.jpg",
+        }, {
+            title: "Give it away",
+            artist: "Motif",
+            mp3: "/music/Motif - Give it away.mp3",
+            cover: "/img/musicCover/03.jpg",
+        }, {
+            title: "心做し",
+            artist: "Sou",
+            mp3: "/music/Sou - 心做し.mp3",
+            cover: "/img/musicCover/03.jpg",
+        }, {
+            title: "Opening Titles",
+            artist: "David Arnold",
+            mp3: "/music/David Arnold - Opening Titles.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },{
+            title: "当你",
+            artist: "回音哥",
+            mp3: "/music/回音哥 - 当你.mp3",
+            cover: "/img/musicCover/03.jpg",
+        },  ];
+        var isRotate = true;
+        var autoplay = true;    var playlist = [{
+            title: "River Flows In You.mp3",
+            artist: "郑成河",
+            mp3: "/music/郑成河 - River Flows In You.mp3",
+            cover: "/img/musicCover/Irony.jpg",
+        },{
+            title: "童话镇",
+            artist: "陈一发儿",
+            mp3: "/music/陈一发儿 - 童话镇.mp3",
+            cover: "/img/musicCover/Cyf.jpg",
+        }, {
+            title: "Oceanside",
+            artist: "Lainey Lou",
+            mp3: "/music/Lainey Lou - Oceanside.mp3",
+            cover: "/img/musicCover/Melody Lane.jpg",
+        }, {
+            title: "岁月神偷",
+            artist: "金玟岐",
+            mp3: "/music/金玟岐 - 岁月神偷.mp3",
+            cover: "/img/musicCover/Jwq.jpg",
+        }, {
+            title: "小幸运(Cover 田馥甄)",
+            artist: "金玟岐",
+            mp3: "/music/金玟岐 - 小幸运(Cover 田馥甄).mp3",
+            cover: "/img/musicCover/Jwq.jpg",
+        },{
+            title: "僕らの手には何もないけど、",
+            artist: "Ram Wire",
+            mp3: "/music/Ram Wire - 僕らの手には何もないけど、.mp3",
+            cover: "/img/musicCover/僕らの手には何もないけど、.jpg",
+        },{
+            title: "Matter of Time",
+            artist: "Shannon Hurley",
+            mp3: "/music/Shannon Hurley - Matter of Time.mp3",
+            cover: "/img/musicCover/Matter Of Time.jpg",
+        },{
+            title: "晴天",
+            artist: "刘瑞琦",
+            mp3: "/music/刘瑞琦 - 晴天.mp3",
+            cover: "/img/musicCover/Lrq.jpg",
+        },{
+            title: "房间",
+            artist: "刘瑞琦",
+            mp3: "/music/刘瑞琦 - 房间.mp3",
+            cover: "/img/musicCover/Lrq.jpg",
+        }, {
+            title: "Undertale",
+            artist: "Toby Fox",
+            mp3: "/music/Toby Fox - Undertale.mp3",
+            cover: "/img/musicCover/Undertale.jpg",
+        }, {
+            title: "被驯服的象",
+            artist: "蔡健雅",
+            mp3: "/music/蔡健雅 - 被驯服的象.mp3",
+            cover: "/img/musicCover/Cjy.jpg",
+        },{
+            title: "쓰레기(Inst.)",
+            artist: "河佑镇",
+            mp3: "/music/河佑镇 - 쓰레기(Inst.).mp3",
+            cover: "/img/musicCover/쓰레기.jpg",
+        }, {
+            title: "Give it away",
+            artist: "Motif",
+            mp3: "/music/Motif - Give It Away.mp3",
+            cover: "/img/musicCover/Give It Away.jpg",
+        }, {
+            title: "心做し",
+            artist: "Sou",
+            mp3: "/music/Sou - 心做し.mp3",
+            cover: "/img/musicCover/Pop.jpg",
+        }, {
+            title: "Opening Titles",
+            artist: "David Arnold",
+            mp3: "/music/David Arnold - Opening Titles.mp3",
+            cover: "/img/musicCover/Sherlock.jpg",
+        },{
+            title: "当你",
+            artist: "回音哥",
+            mp3: "/music/回音哥 - 当你.mp3",
+            cover: "/img/musicCover/Hyg.jpg",
+        }, {
+            title: "Best of my Love",
+            artist: "安田レイ",
+            mp3: "/music/安田レイ - Best of my Love.mp3",
+            cover: "/img/musicCover/Will.jpg",
+        },{
+            title: "Wish You Well",
+            artist: "Katie Herzig",
+            mp3: "/music/Katie Herzig - Wish You Well.mp3",
+            cover: "/img/musicCover/Wish You Will.jpg",
+        },];
+        var isRotate = true;
+        var autoplay = false;
+    </script>
+    
+    <script>
+        function bgChange()
+        {
+            var lis = $('.lib');
+            for(var i = 0; i < lis.length; i += 2)
+                lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+        };
+        $(function (){
+        setTimeout('bgChange()', 10000); //延迟1秒
+    })
+    </script>
 
 
 
@@ -401,7 +672,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
     
@@ -415,6 +686,15 @@
                     <i class="material-icons sidebar-material-icons">loyalty</i>
                 
                 标签
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/books" title="书库">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                书库
             </a>
         </li>
   	
@@ -603,6 +883,19 @@
     
 </footer>
 
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "/js/player.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>
+
                     <!-- Import File -->
 <script src="/js/highlight.min.js"></script>
 <script src="/js/js.min.js"></script>
@@ -724,27 +1017,7 @@
 
 
 
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-
-    <!-- 多说公共 js 代码 start -->
-    <script type="text/javascript">
-        var duoshuoQuery = {
-            short_name: 'null'
-        };
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';
-            ds.async = true;
-            ds.src = 'https://static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
-    <!-- 多说公共 js 代码 end -->
 
 
 
